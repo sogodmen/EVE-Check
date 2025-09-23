@@ -14,7 +14,7 @@ from discord.ext import commands
 
 logging.basicConfig(filename='logging.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', encoding='utf-8')
 
-print("Добро пожаловать в программу EVE_Check. (c) DED Alliance")
+print("Добро пожаловать в программу EVE_Check.")
 
 bot_started = False
 error_sound_played = False
@@ -380,4 +380,5 @@ async def on_ready():
 
 if __name__ == "__main__":
     bot.run(TOKEN)
+
     
