@@ -21,32 +21,33 @@ def load_packages_from_json(json_path="install_packages.json"):
             data = json.load(f)
             return data.get("packages", [])
     except FileNotFoundError:
-        print(f"⚠ Файл {json_path} не найден! Используется пустой список пакетов.")
+        print(f"⚠ File {json_path} not found! Empty package list used.")
         return []
     except json.JSONDecodeError:
-        print(f"⚠ Ошибка в формате JSON в файле {json_path}! Используется пустой список.")
+        print(f"⚠ JSON format error in file {json_path}! An empty list is used.")
         return []
 
 def install_packages():
     packages = load_packages_from_json()
     if not packages:
-        print("❌ Список пакетов пуст или не загружен. Проверьте install_packages.json.")
+        print("❌ The package list is empty or not loaded. Check install_packages.json.")
         return
 
-    print("🔍 Проверка и установка пакетов...")
+    print("🔍 Checking and installing packages...")
     for package in packages:
         if is_package_installed(package):
-            print(f"✅ Уже установлен: {package}")
+            print(f"✅ Already installed: {package}")
             continue
         
         try:
-            print(f"⬇ Устанавливаю {package}...")
+            print(f"⬇ Installing {package}...")
             subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-            print(f"✅ Успешно: {package}")
+            print(f"✅ Successfully: {package}")
         except subprocess.CalledProcessError as e:
-            print(f"❌ Ошибка при установке {package}: {e}")
+            print(f"❌ Installation error {package}: {e}")
 
 if __name__ == "__main__":
-    print("🚀 Начало установки зависимостей...")
+    print("🚀 Start installing dependencies...")
     install_packages()
-    print("🎉 Готово! Все пакеты проверены.")
+
+    print("🎉 Done! All packages have been checked.")
