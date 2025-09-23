@@ -78,8 +78,9 @@ Edit the files:
 Example:
 ```json
 {
-"token": "YOUR_TELEGRAM_BOT_TOKEN",
-"chat_id": -100123456789
+    "TOKEN": "Your Discord API Token",
+    "GUILD_ID": "Your Discord group ID",
+    "CHANNEL_ID": "Your Discord Channel ID"
 }
 ```
 
