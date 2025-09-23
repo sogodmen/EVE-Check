@@ -110,6 +110,8 @@ python EVE_Check_2.0.py
 - Uses `.wav` files from `Sound/` to play audio for events
 - The bot sends notifications to Telegram/Discord when events are detected
 
+---
+
 ## ⚠️ Important Note Regarding Security and Compliance
 
 EVE Check is an **external application** (overlay) that runs alongside the EVE Online client, but **does not modify or interact with it directly**.
