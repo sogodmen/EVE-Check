@@ -1,65 +1,65 @@
 
-# EVE_Check 2.0 - Система мониторинга локального чата EVE Online
+# EVE_Check 2.0 - EVE Online Local Chat Monitoring System
 
-Проект для автоматического мониторинга локального чата в EVE Online с уведомлениями в Discord и Telegram о появлении вражеских и нейтральных целей.
+A project for automatically monitoring local chat in EVE Online with Discord and Telegram notifications about the appearance of hostile and neutral targets.
 
-🎯 Основные возможности
-- Автоматическое обнаружение целей в локальном чате EVE Online
-- Цветовая классификация целей: красные (враги), оранжевые (враги), желтые (нейтралы)
-- Двойная система уведомлений: Discord + Telegram
-- Звуковые оповещения с градацией по количеству целей
-- Контроль состояния клиента игры (обнаружение отключений)
+🎯 Main Features
+- Automatic detection of targets in EVE Online local chat
+- Color-coded target classification: red (enemies), orange (enemies), yellow (neutrals)
+- Dual notification system: Discord + Telegram
+- Sound alerts with gradation based on the number of targets
+- Game client status monitoring (detection of disconnections)
 
 ---
 
-## 🔧 Системные требования
+## 🔧 System Requirements
 
-- Windows 10 или выше
+- Windows 10 or higher
 - Python 3.10+
 - ffmpeg
 
 ---
 
-## 📦 Установка
+## 📦 Installation
 
-### 1. Установка Python
+### 1. Install Python
 
-Скачайте и установите Python: [https://www.python.org/downloads/](https://www.python.org/downloads/)  
-При установке отметьте галочку **"Add Python to PATH"**.
+Download and install Python: [https://www.python.org/downloads/](https://www.python.org/downloads/)  
+During installation, check the **"Add Python to PATH"** box.
 
-### 2. Установка зависимостей
+### 2. Installing dependencies
 
-Откройте терминал (cmd/PowerShell) в папке с проектом и выполните:
+Open a terminal (cmd/PowerShell) in the project folder and run:
 
 ```bash
 python install_requirements.py
 ```
 
-Скрипт установит библиотеки из `install_packages.json`.
+The script will install libraries from `install_packages.json`.
 
 ---
 
-## 📁 Добавление FFmpeg в переменную среды PATH
+## 📁 Adding FFmpeg to the PATH environment variable
 
-Скачайте архив FFmpeg с Google Диска:
-- **Ссылка**: https://drive.google.com/file/d/1lpm9JWwwDcHCoijf81RwGlEbhBhZKQcH/view?usp=sharing
-- Скачайте файл `ffmpeg.zip`
+Download the FFmpeg archive from Google Drive:
+- **Link**: https://drive.google.com/file/d/1lpm9JWwwDcHCoijf81RwGlEbhBhZKQcH/view?usp=sharing
+- Download the file `ffmpeg.zip`
 
-### Шаг 2: Распаковка
+### Step 2: Unpacking
 
-Распакуйте архив:
-- `C:\Tools\ffmpeg\` (рекомендуется)
+Unpack the archive:
+- `C:\Tools\ffmpeg\` (recommended)
 
-## Шаг 3: Настройка переменной среды PATH
+## Step 3: Setting the PATH environment variable
 
-1. Нажмите `Win + R`, введите `sysdm.cpl`, нажмите Enter
-2. Перейдите на вкладку "Дополнительно" → "Переменные среды"
-3. В разделе "Системные переменные" найдите `Path`
-4. Нажмите "Изменить" → "Создать"
-5. Добавьте путь к папке `bin` (пример: `C:\Tools\ffmpeg\bin`)
-6. Нажмите "ОК" во всех окнах
+1. Press Win + R, type sysdm.cpl, and press Enter
+2. Go to the Advanced tab → Environment Variables
+3. Under System Variables, find Path
+4. Click Edit → New
+5. Add the path to the bin folder (example: C:\Tools\ffmpeg\bin)
+6. Click OK on all windows
 
-Проверьте:
+Check:
 
 ```bash
 ffmpeg -version
@@ -67,37 +67,37 @@ ffmpeg -version
 
 ---
 
-## ⚙️ Настройка конфигураций
+## ⚙️ Configuring Configurations
 
-Редактируйте файлы:
+Edit the files:
 
-- `Config_Telegram.json` — токен и ID Telegram-чата
-- `Config_Discord.json` — токен/вебхук Discord
-- `Config_Region.json`, `Config_System.json` — параметры системы
+- `Config_Telegram.json` — Telegram chat token and ID
+- `Config_Discord.json` — Discord token/webhook
+- `Config_Region.json`, `Config_System.json` — system parameters
 
-Пример:
+Example:
 ```json
 {
-  "token": "YOUR_TELEGRAM_BOT_TOKEN",
-  "chat_id": -100123456789
+"token": "YOUR_TELEGRAM_BOT_TOKEN",
+"chat_id": -100123456789
 }
 ```
 
 ---
 
-## 🚀 Запуск
+## 🚀 Launch
 
-### Вариант 1: Через `.bat`
-Просто дважды кликните `BOT.bat`.
+### Option 1: Via `.bat`
+Just double-click `BOT.bat`.
 
-### Вариант 2: Через терминал
+### Option 2: Via Terminal
 
-# Для запуска только Discord бота выполните команду: 
+# To launch only the Discord bot, run the command:
 
 ```bash
 python EVE_Check.py
 ```
-# Для запуска бота с поддержкой Telegram и Discord выполните команду:
+# To launch the bot with Telegram and Discord support, run the command:
 
 ```bash
 python EVE_Check_2.0.py
@@ -105,8 +105,7 @@ python EVE_Check_2.0.py
 
 ---
 
-## 📌 Примечания
+## 📌 Notes
 
-- Используются `.wav` файлы из `Sound/` для озвучивания событий
-- Бот отправляет уведомления в Telegram/Discord при обнаружении событий
-
+- Uses `.wav` files from `Sound/` to play audio for events
+- The bot sends notifications to Telegram/Discord when events are detected
