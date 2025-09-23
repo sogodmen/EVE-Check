@@ -16,7 +16,7 @@
 
 - Windows 10 или выше
 - Python 3.10+
-- ffmpeg (нужен только `bin` каталог)
+- ffmpeg
 
 ---
 
