@@ -1,0 +1,5 @@
+{
+    "TOKEN": "Your Discord API Token",
+    "GUILD_ID": "Your Discord group ID",
+    "CHANNEL_ID": "Your Discord Channel ID"
+}
