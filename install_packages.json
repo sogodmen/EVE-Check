@@ -1,0 +1,15 @@
+{
+    "packages": [
+        "opencv-python",
+        "numpy",
+        "pyautogui",
+        "discord",
+        "keyboard",
+        "mss",
+        "discord.py",
+        "pillow",
+        "asyncio",        
+        "PyNaCl",
+        "python-telegram-bot"
+    ]
+}
