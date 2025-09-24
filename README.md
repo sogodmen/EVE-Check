@@ -22,7 +22,7 @@ Do you want to load settings from a file? (y/n):
 
 ### Important First Launch Points:
 
-- ⚠️ **On first launch**, the scan area settings file has not yet been created.
+- ⚠️ **On first launch**, the scan area settings file is not yet configured.
 - 🔧 **Select "n"** (no) to begin scanning area setup.
 
 ### Scan Area Setup Process:
