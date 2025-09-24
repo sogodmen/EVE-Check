@@ -84,7 +84,7 @@ Example:
 }
 ```
 
-## TOKEN (bot token):
+### TOKEN (bot token):
 
 1. **Go to the [Discord Developer Portal](https://discord.com/developers/applications)**
 2. **Create a new application** or select an existing one
@@ -95,18 +95,18 @@ Example:
 - MESSAGE CONTENT INTENT
 - In the "Privileged Gateway Intents" section
 
-## GUILD_ID (server ID):
+### GUILD_ID (server ID):
 
 1. **Enable developer mode in Discord:**
 - Settings → Advanced → Developer Mode
 2. **Right-click the server** → "Copy Server ID"
 
-## CHANNEL_ID (voice channel ID):
+### CHANNEL_ID (voice channel ID):
 
 1. **Make sure the mode is set to [unspecified] Developer permissions enabled**
 2. **Right-click on a voice channel** → "Copy Channel ID"
 
-## Adding a bot to a server:
+### Adding a bot to a server:
 
 1. **In the Discord Developer Portal**, under "OAuth2" → "URL Generator"
 2. **Select scopes:**
@@ -120,7 +120,7 @@ Example:
 4. **Copy the generated link** and follow it
 5. **Select a server** and add the bot with the specified permissions
 
-## Configuring bot permissions on the server:
+### Configuring bot permissions on the server:
 
 1. **On the Discord server**, go to the server settings
 2. **The "Roles" section** - Find your bot's role
@@ -130,7 +130,7 @@ Example:
 - View desired voice channels
 4. **In the voice channel settings**, allow the bot to connect
 
-## Connection check:
+### Connection check:
 
 After setup, make sure the bot:
 - ✅ Appears in the server participant list
