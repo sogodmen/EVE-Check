@@ -17,8 +17,8 @@ A project for automatically monitoring local chat in EVE Online with Discord and
 
 When you first launch the program, you will see a welcome message:
 
-Welcome to the EVE_Check program.
-Do you want to load settings from a file? (y/n):
+**Welcome to the EVE_Check program.**
+**Do you want to load settings from a file? (y/n):**
 
 ### Important First Launch Points:
 
