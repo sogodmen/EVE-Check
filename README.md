@@ -226,8 +226,8 @@ EVE Check is an **external application** (overlay) that runs alongside the EVE O
 
 # Important Message from the Developer
 
-I have a very negative attitude toward bots in the game, but this bot was created as your first line of defense while enjoying your favorite pastime. Don't abuse it. I believe you'll find it useful.
+I have a very negative attitude toward bots in the game, but this bot was created as your first line of defense during your favorite pastime. Don't overuse it. I believe you'll find it useful.
 
-To contact me, you can email me at **sogodmen@gmail.com**
+To contact me, you can email me at: **sogodmen@gmail.com**
 
-**Летите безопасно, капсулер! 🚀**
+**Fly safe, capsuleer! 🚀**
