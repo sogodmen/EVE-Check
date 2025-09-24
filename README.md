@@ -84,60 +84,58 @@ Example:
 }
 ```
 
-## Где взять эти данные:
+## TOKEN (bot token):
 
-## TOKEN (токен бота):
+1. **Go to the [Discord Developer Portal](https://discord.com/developers/applications)**
+2. **Create a new application** or select an existing one
+3. **In the "Bot" section**, create a bot and copy the token
+4. **Enable the following permissions in the bot settings:**
+- PRESENCE INTENT
+- SERVER MEMBERS INTENT
+- MESSAGE CONTENT INTENT
+- In the "Privileged Gateway Intents" section
 
-1. **Перейдите на [Discord Developer Portal](https://discord.com/developers/applications)**
-2. **Создайте новое приложение** или выберите существующее
-3. **В разделе "Bot"** создайте бота и скопируйте токен
-4. **В настройках бота включите следующие права:**
-   - PRESENCE INTENT
-   - SERVER MEMBERS INTENT
-   - MESSAGE CONTENT INTENT
-   - В разделе "Privileged Gateway Intents"
+## GUILD_ID (server ID):
 
-## GUILD_ID (ID сервера):
+1. **Enable developer mode in Discord:**
+- Settings → Advanced → Developer Mode
+2. **Right-click the server** → "Copy Server ID"
 
-1. **В Discord включите режим разработчика:**
-   - Настройки → Расширенные → Режим разработчика
-2. **Правой кнопкой по серверу** → "Копировать ID сервера"
+## CHANNEL_ID (voice channel ID):
 
-## CHANNEL_ID (ID голосового канала):
+1. **Make sure the mode is set to [unspecified] Developer permissions enabled**
+2. **Right-click on a voice channel** → "Copy Channel ID"
 
-1. **Убедитесь, что режим разработчика включен**
-2. **Правой кнопкой по голосовому каналу** → "Копировать ID канала"
+## Adding a bot to a server:
 
-## Добавление бота на сервер:
+1. **In the Discord Developer Portal**, under "OAuth2" → "URL Generator"
+2. **Select scopes:**
+- `bot`
+- `applications.commands`
+3. **Select permissions:**
+- `Connect` (connect to voice channels)
+- `Speak` (speak in voice channels)
+- `Use Voice Activity` (use voice activity)
+- `View Channel` (view channels)
+4. **Copy the generated link** and follow it
+5. **Select a server** and add the bot with the specified permissions
 
-1. **В Discord Developer Portal** в разделе "OAuth2" → "URL Generator"
-2. **Выберите scopes:**
-   - `bot`
-   - `applications.commands`
-3. **Выберите permissions:**
-   - `Connect` (подключаться к голосовым каналам)
-   - `Speak` (разговаривать в голосовых каналах)
-   - `Use Voice Activity` (использовать голосовую активность)
-   - `View Channel` (просматривать каналы)
-4. **Скопируйте сгенерированную ссылку** и перейдите по ней
-5. **Выберите сервер** и добавьте бота с указанными правами
+## Configuring bot permissions on the server:
 
-## Настройка прав бота на сервере:
+1. **On the Discord server**, go to the server settings
+2. **The "Roles" section** - Find your bot's role
+3. **Make sure the bot has the following permissions**
+- Connect to voice channels
+- Speak in voice channels
+- View desired voice channels
+4. **In the voice channel settings**, allow the bot to connect
 
-1. **На сервере Discord** перейдите в настройки сервера
-2. **Раздел "Роли"** - найдите роль вашего бота
-3. **Убедитесь, что у бота есть права:**
-   - Подключаться к голосовым каналам
-   - Говорить в голосовых каналах
-   - Видеть нужные голосовые каналы
-4. **В настройках голосового канала** разрешите боту подключаться
+## Connection check:
 
-## Проверка подключения:
-
-После настройки убедитесь, что бот:
-- ✅ Отображается в списке участников сервера
-- ✅ Может подключаться к указанному голосовому каналу
-- ✅ Имеет необходимые права для воспроизведения звука
+After setup, make sure the bot:
+- ✅ Appears in the server participant list
+- ✅ Can connect to the specified voice channel
+- ✅ Has the necessary permissions to play sound
 
 ---
 
