@@ -221,3 +221,13 @@ EVE Check is an **external application** (overlay) that runs alongside the EVE O
 * **EULA and TOS Compliance**: This method of operation does not violate the [End User License Agreement (EULA)](https://www.eveonline.com/en/agreement/eula) and [Terms of Service (TOS)](https://www.eveonline.com/en/agreement/tos) of EVE Online.
 
 **Conclusion:** Using EVE Check **will not result in an account ban** by EVE Online security systems (e.g., Easy Anti-Cheat - EAC), as these systems are designed to detect programs that directly interact with the game. EVE Check is not such a program.  
+
+---
+
+# Important Message from the Developer
+
+I have a very negative attitude toward bots in the game, but this bot was created as your first line of defense while enjoying your favorite pastime. Don't abuse it. I believe you'll find it useful.
+
+To contact me, you can email me at **sogodmen@gmail.com**
+
+**Летите безопасно, капсулер! 🚀**
