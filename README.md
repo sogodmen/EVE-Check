@@ -29,8 +29,8 @@ When you first launch the program, you will see a welcome message:
 
 1. **After selecting "n", the program will prompt you to configure the scan area:**
 
-Please move your mouse to the upper left corner of the area and press F12.
-Then move your mouse to the lower right corner of the area and press F12 again.
+- **Please move your mouse to the upper left corner of the area and press F12.**
+- **Then move your mouse to the lower right corner of the area and press F12 again.**
 
 2. **Setup steps:**
 
