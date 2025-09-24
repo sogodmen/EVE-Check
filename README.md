@@ -1,5 +1,5 @@
 
-# EVE_Check 2.0 - EVE Online Local Chat Monitoring System
+# EVE-Check - EVE Online Local Chat Monitoring System
 
 A project for automatically monitoring local chat in EVE Online with Discord and Telegram notifications about the appearance of hostile and neutral targets.
 
