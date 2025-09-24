@@ -89,7 +89,7 @@ Example:
 ## 🚀 Launch
 
 ### Option 1: Via `.bat`
-Just double-click `BOT.bat`.
+Just double-click `Start.bat`.
 
 ### Option 2: Via Terminal
 
