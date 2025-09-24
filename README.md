@@ -89,7 +89,8 @@ Example:
 ## 🚀 Launch
 
 ### Option 1: Via `.bat`
-Just double-click `Start.bat`.
+Discord only: Double-click Start.bat
+Discord + Telegram: Double-click Start_Full.bat
 
 ### Option 2: Via Terminal
 
@@ -103,6 +104,9 @@ python EVE_Check.py
 ```bash
 python EVE_Check_2.0.py
 ```
+
+Start.bat launches the Discord-only version
+Start_Full.bat launches the version with Discord and Telegram support
 
 ---
 
