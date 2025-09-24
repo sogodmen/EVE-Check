@@ -1,4 +1,4 @@
 {
-    "TELEGRAM_TOKEN": "YOUR_TELEGRAM_BOT_TOKEN",
-    "TELEGRAM_CHAT_ID": "-100 Your Telegram channel ID"
+    "TELEGRAM_TOKEN": "Your_Telegram_API_Token",
+    "TELEGRAM_CHAT_ID": "-100_Your_Telegram_channel_ID"
 }
