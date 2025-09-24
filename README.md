@@ -105,9 +105,6 @@ python EVE_Check.py
 python EVE_Check_2.0.py
 ```
 
-- Start.bat launches the Discord-only version
-- Start_Full.bat launches the version with Discord and Telegram support
-
 ---
 
 ## 📌 Notes
