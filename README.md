@@ -11,44 +11,44 @@ A project for automatically monitoring local chat in EVE Online with Discord and
 - Game client status monitoring (detection of disconnections)
 
 ---
-# Процесс первого запуска
+# First Launch Process
 
-## Начальная настройка области сканирования
+## Initial Scan Area Setup
 
-При первом запуске программы вы увидите приветственное сообщение:
+When you first launch the program, you will see a welcome message:
 
 Welcome to the EVE_Check program.
 Do you want to load settings from a file? (y/n):
 
-### Важные моменты первого запуска:
+### Important First Launch Points:
 
-- ⚠️ **При первом запуске** файл с настройками области еще не создан
-- 🔧 **Выберите "n"** (no) для начала настройки области сканирования
+- ⚠️ **On first launch**, the scan area settings file has not yet been created.
+- 🔧 **Select "n"** (no) to begin scanning area setup.
 
-### Процесс настройки области:
+### Scan Area Setup Process:
 
-1. **После выбора "n" программа предложит настроить область сканирования:**
+1. **After selecting "n", the program will prompt you to configure the scan area:**
 
 Please move your mouse to the upper left corner of the area and press F12.
 Then move your mouse to the lower right corner of the area and press F12 again.
 
-2. **Действия по настройке:**
+2. **Setup steps:**
 
-- **Шаг 1:** Переместите курсор мыши в **верхний левый угол** области локального чата в клиенте EVE Online
-- **Нажмите F12** для фиксации первой точки
-- **Шаг 2:** Переместите курсор в **нижний правый угол** области локального чата
-- **Снова нажмите F12** для завершения настройки
+- **Step 1:** Move your mouse cursor to the **upper left corner** of the local chat area in the EVE Online client
+- **Press F12** to set the first point
+- **Step 2:** Move your mouse cursor to the **lower right corner** of the local chat area
+- **Press F12 again** to complete the setup
 
-3. **Автоматическое сохранение:**
-- Настройки области автоматически сохраняются в файл `Config_Region.json`
-- При последующих запусках программа будет использовать сохраненные настройки
+3. **Automatic saving:**
+- Region settings are automatically saved to the `Config_Region.json` file
+- The program will use the saved settings for subsequent launches
 
-### Для последующих запусков:
+### For subsequent launches:
 
-- ✅ **Если настройки уже сохранены** - выберите "y" для загрузки из файла
-- 🔄 **Если нужно перенастроить область** - выберите "n" для повторной настройки
+- ✅ **If the settings have already been saved** - select "y" to load from file
+- 🔄 **If you need to reconfigure the region** - select "n" to reconfigure
 
-📌 **Рекомендация:** Область сканирования должна охватывать окно локального чата EVE Online, где отображаются вражеские корабли. Убедитесь, что область включает все возможные позиции появления целей.
+📌 **Recommendation:** The scan area should cover the EVE Online local chat window where the Enemy ships. Ensure the area includes all possible target spawn locations.
 
 ---
 
