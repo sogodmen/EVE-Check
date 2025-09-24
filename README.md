@@ -180,11 +180,11 @@ Do you want to load settings from a file? (y/n):
 ### Important First Launch Points:
 
 - ⚠️ **On first launch**, the scan area settings file is not yet configured.
-- 🔧 **Select "n"** (no) to begin scanning area setup.
+- 🔧 **Select "`n`"** (no) to begin scanning area setup.
 
 ### Scan Area Setup Process:
 
-1. **After selecting "n", the program will prompt you to configure the scan area:**
+1. **After selecting "`n`", the program will prompt you to configure the scan area:**
 
 `
 Please move your mouse to the upper left corner of the area and press F12.
@@ -204,8 +204,8 @@ Then move your mouse to the lower right corner of the area and press F12 again.
 
 ### For subsequent launches:
 
-- ✅ **If settings have already been saved** - select "y" to load from file
-- 🔄 **If you need to reconfigure the local chat area** - select "n" to reconfigure
+- ✅ **If settings have already been saved** - select "`y`" to load from file
+- 🔄 **If you need to reconfigure the local chat area** - select "`n`" to reconfigure
 
 📌 **Recommendation:** The scan area should cover the EVE Online local chat window where the Enemy ships. Ensure the area includes all possible target spawn locations.
 
