@@ -11,46 +11,6 @@ A project for automatically monitoring local chat in EVE Online with Discord and
 - Game client status monitoring (detection of disconnections)
 
 ---
-# First Launch Process
-
-## Initial Scan Area Setup
-
-When you first launch the program, you will see a welcome message:
-
-**Welcome to the EVE_Check program.**
-**Do you want to load settings from a file? (y/n):**
-
-### Important First Launch Points:
-
-- ⚠️ **On first launch**, the scan area settings file is not yet configured.
-- 🔧 **Select "n"** (no) to begin scanning area setup.
-
-### Scan Area Setup Process:
-
-1. **After selecting "n", the program will prompt you to configure the scan area:**
-
-**Please move your mouse to the upper left corner of the area and press F12.**
-**Then move your mouse to the lower right corner of the area and press F12 again.**
-
-2. **Setup steps:**
-
-- **Step 1:** Move your mouse cursor to the **upper left corner** of the local chat area in the EVE Online client
-- **Press F12** to set the first point
-- **Step 2:** Move your mouse cursor to the **lower right corner** of the local chat area
-- **Press F12 again** to complete the setup
-
-3. **Automatic saving:**
-- Region settings are automatically saved to the `Config_Region.json` file
-- The program will use the saved settings for subsequent launches
-
-### For subsequent launches:
-
-- ✅ **If settings have already been saved** - select "y" to load from file
-- 🔄 **If you need to reconfigure the local chat area** - select "n" to reconfigure
-
-📌 **Recommendation:** The scan area should cover the EVE Online local chat window where the Enemy ships. Ensure the area includes all possible target spawn locations.
-
----
 
 ## 🔧 System Requirements
 
@@ -164,3 +124,43 @@ EVE Check is an **external application** (overlay) that runs alongside the EVE O
 * **EULA and TOS Compliance**: This method of operation does not violate the [End User License Agreement (EULA)](https://www.eveonline.com/en/agreement/eula) and [Terms of Service (TOS)](https://www.eveonline.com/en/agreement/tos) of EVE Online.
 
 **Conclusion:** Using EVE Check **will not result in an account ban** by EVE Online security systems (e.g., Easy Anti-Cheat - EAC), as these systems are designed to detect programs that directly interact with the game. EVE Check is not such a program.  
+
+---
+# First Launch Process
+
+## Initial Scan Area Setup
+
+When you first launch the program, you will see a welcome message:
+
+**Welcome to the EVE_Check program.**
+**Do you want to load settings from a file? (y/n):**
+
+### Important First Launch Points:
+
+- ⚠️ **On first launch**, the scan area settings file is not yet configured.
+- 🔧 **Select "n"** (no) to begin scanning area setup.
+
+### Scan Area Setup Process:
+
+1. **After selecting "n", the program will prompt you to configure the scan area:**
+
+**Please move your mouse to the upper left corner of the area and press F12.**
+**Then move your mouse to the lower right corner of the area and press F12 again.**
+
+2. **Setup steps:**
+
+- **Step 1:** Move your mouse cursor to the **upper left corner** of the local chat area in the EVE Online client
+- **Press F12** to set the first point
+- **Step 2:** Move your mouse cursor to the **lower right corner** of the local chat area
+- **Press F12 again** to complete the setup
+
+3. **Automatic saving:**
+- Region settings are automatically saved to the `Config_Region.json` file
+- The program will use the saved settings for subsequent launches
+
+### For subsequent launches:
+
+- ✅ **If settings have already been saved** - select "y" to load from file
+- 🔄 **If you need to reconfigure the local chat area** - select "n" to reconfigure
+
+📌 **Recommendation:** The scan area should cover the EVE Online local chat window where the Enemy ships. Ensure the area includes all possible target spawn locations.
