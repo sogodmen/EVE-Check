@@ -113,19 +113,6 @@ python EVE_Check_2.0.py
 - The bot sends notifications to Telegram/Discord when events are detected
 
 ---
-
-## ⚠️ Important Note Regarding Security and Compliance
-
-EVE Check is an **external application** (overlay) that runs alongside the EVE Online client, but **does not modify or interact with it directly**.
-
-### Key Points:
-* **No Client Interference**: The application does not inject code, read or modify game memory (RAM), or intercept network traffic.
-* **OCR-Based**: Data analysis is performed solely by reading text from your computer screen (Optical Character Recognition - OCR technology). This is the same as if you were reading the information yourself.
-* **EULA and TOS Compliance**: This method of operation does not violate the [End User License Agreement (EULA)](https://www.eveonline.com/en/agreement/eula) and [Terms of Service (TOS)](https://www.eveonline.com/en/agreement/tos) of EVE Online.
-
-**Conclusion:** Using EVE Check **will not result in an account ban** by EVE Online security systems (e.g., Easy Anti-Cheat - EAC), as these systems are designed to detect programs that directly interact with the game. EVE Check is not such a program.  
-
----
 # First Launch Process
 
 ## Initial Scan Area Setup
@@ -164,3 +151,16 @@ When you first launch the program, you will see a welcome message:
 - 🔄 **If you need to reconfigure the local chat area** - select "n" to reconfigure
 
 📌 **Recommendation:** The scan area should cover the EVE Online local chat window where the Enemy ships. Ensure the area includes all possible target spawn locations.
+
+---
+
+## ⚠️ Important Note Regarding Security and Compliance
+
+EVE Check is an **external application** (overlay) that runs alongside the EVE Online client, but **does not modify or interact with it directly**.
+
+### Key Points:
+* **No Client Interference**: The application does not inject code, read or modify game memory (RAM), or intercept network traffic.
+* **OCR-Based**: Data analysis is performed solely by reading text from your computer screen (Optical Character Recognition - OCR technology). This is the same as if you were reading the information yourself.
+* **EULA and TOS Compliance**: This method of operation does not violate the [End User License Agreement (EULA)](https://www.eveonline.com/en/agreement/eula) and [Terms of Service (TOS)](https://www.eveonline.com/en/agreement/tos) of EVE Online.
+
+**Conclusion:** Using EVE Check **will not result in an account ban** by EVE Online security systems (e.g., Easy Anti-Cheat - EAC), as these systems are designed to detect programs that directly interact with the game. EVE Check is not such a program.  
