@@ -172,10 +172,10 @@ python EVE_Check_2.0.py
 
 When you first launch the program, you will see a welcome message:
 
-```json
+`
 Welcome to the EVE_Check program.
 Do you want to load settings from a file? (y/n):
-```
+`
 
 ### Important First Launch Points:
 
@@ -186,10 +186,10 @@ Do you want to load settings from a file? (y/n):
 
 1. **After selecting "n", the program will prompt you to configure the scan area:**
 
-```json
+`
 Please move your mouse to the upper left corner of the area and press F12.
 Then move your mouse to the lower right corner of the area and press F12 again.
-```
+`
 
 2. **Setup steps:**
 
