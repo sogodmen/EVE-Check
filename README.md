@@ -164,6 +164,7 @@ python EVE_Check_2.0.py
 
 - Uses `.wav` files from `Sound/` to play audio for events
 - The bot sends notifications to Telegram/Discord when events are detected
+- Language Note: If you need sound files in Russian, replace the files in the Sound/ folder with the ones from the Sound [RU] folder.
 
 ---
 # First Launch Process
