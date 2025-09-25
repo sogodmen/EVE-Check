@@ -357,6 +357,4 @@ async def on_ready():
     bot.loop.create_task(object_detection_forever())
 
 if __name__ == "__main__":
-
     bot.run(TOKEN)
-
