@@ -15,7 +15,7 @@ A project for automatically monitoring local chat in EVE Online with Discord and
 ## 🔧 System Requirements
 
 - Windows 10 or higher
-- Python 3.10+
+- Python 3.12+
 - ffmpeg
 
 ---
