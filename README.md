@@ -208,8 +208,9 @@ Then move your mouse to the lower right corner of the area and press F12 again.
 - ✅ **If settings have already been saved** - select "`y`" to load from file
 - 🔄 **If you need to reconfigure the local chat area** - select "`n`" to reconfigure
 
-📌 **Recommendation:** The scan area should cover the EVE Online local chat window where the Enemy ships. Ensure the area includes all possible target spawn locations.
-**UI Important Setting**: For more accurate target monitoring in the local chat, change the color of neutral targets from gray to yellow in the settings.
+📌 **Recommendation:** 
+- The scan area should cover the EVE Online local chat window where the Enemy ships. Ensure the area includes all possible target spawn locations.
+- **UI Important Setting**: For more accurate target monitoring in the local chat, change the color of neutral targets from gray to yellow in the settings.
 
 ---
 
