@@ -12,7 +12,7 @@ from telegram import Bot
 from telegram.ext import Application
 from discord.ext import commands
 
-logging.basicConfig(filename='logging.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', encoding='utf-8')
+logging.basicConfig(filename='log.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', encoding='utf-8')
 
 print("Welcome to the EVE_Check program.")
 
@@ -358,3 +358,4 @@ async def on_ready():
 
 if __name__ == "__main__":
     bot.run(TOKEN)
+
