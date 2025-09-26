@@ -8,8 +8,6 @@ import keyboard
 import pyautogui
 import numpy as np
 from mss import mss
-from telegram import Bot
-from telegram.ext import Application
 from discord.ext import commands
 
 logging.basicConfig(filename='log.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', encoding='utf-8')
@@ -19,28 +17,35 @@ print("Welcome to the EVE_Check program.")
 bot_started = False
 error_sound_played = False
 object_detected = False
-last_played_file_nitral = None
+last_played_file_alarm = None
 
-def check_required_files():
-    required_files = [
+def check_required_files(config):
+    missing_files = []
+    
+    for file_type, path in config["PATHS"].items():
+        if not os.path.exists(path):
+            missing_files.append(f"{file_type}: {path}")
+    
+    sound_files = config["THRESHOLDS"]["SOUND_FILES"]
+    for i, sound_file in enumerate(sound_files["ENEMY_COUNT"], 1):
+        if not os.path.exists(sound_file):
+            missing_files.append(f"Enemy sound {i}: {sound_file}")
+    
+    required_configs = [
         "Config_Discord.json",
-        "Config_System.json",
-        system_config["PATHS"]["TEMPLATE_IMAGE"],
-        system_config["PATHS"]["ERROR_SOUND"],
-        system_config["PATHS"]["START_SOUND"]
+        "Config_System.json"
     ]
     
-    missing_files = []
-    for file in required_files:
-        if not os.path.exists(file):
-            missing_files.append(file)
+    for config_file in required_configs:
+        if not os.path.exists(config_file):
+            missing_files.append(f"Config file: {config_file}")
     
     if missing_files:
-        print("The following required files are missing:")
-        for file in missing_files:
-            print(f"- {file}")
-        exit(1)
-
+        error_msg = "The following required files are missing:\n" + "\n".join(missing_files)
+        logging.error(error_msg)
+        print(error_msg)
+        raise FileNotFoundError(error_msg)
+    
 def load_system_config():
     try:
         with open("Config_System.json", "r") as file:
@@ -53,11 +58,9 @@ def load_system_config():
 system_config = load_system_config()
 
 if not system_config:
-    logging.error("Failed to load system configuration. Please check the Config_System.json file.")
-    print("Failed to load system configuration. Please check the Config_System.json file.")
+    logging.error("Failed to load system configuration. Please check the Config_System.json file")
+    print("Failed to load system configuration. Please check the Config_System.json file")
     exit(1)
-
-check_required_files()
 
 def validate_system_config(config):
     required_sections = ["COLOR_DETECTION", "THRESHOLDS", "PATHS", "SCREEN"]
@@ -73,34 +76,15 @@ def validate_system_config(config):
         raise ValueError("Missing sound file configuration for enemy count")
 
 try:
+    check_required_files(system_config)
+except FileNotFoundError:
+    exit(1)
+
+try:
     validate_system_config(system_config)
 except ValueError as e:
     logging.error(f"Configuration error: {e}")
     print(f"Configuration error: {e}")
-    exit(1)
-
-def check_files_exist(config):
-    missing_files = []
-    
-    for file_type, path in config["PATHS"].items():
-        if not os.path.exists(path):
-            missing_files.append(f"{file_type}: {path}")
-
-    for i, sound_file in enumerate(config["THRESHOLDS"]["SOUND_FILES"]["ENEMY_COUNT"], 1):
-        if not os.path.exists(sound_file):
-            missing_files.append(f"Enemy sound {i}: {sound_file}")
-    
-    if missing_files:
-        raise FileNotFoundError(
-            "The following files are missing:\n" + 
-            "\n".join(missing_files)
-        )
-
-try:
-    check_files_exist(system_config)
-except FileNotFoundError as e:
-    logging.error(str(e))
-    print(str(e))
     exit(1)
 
 DETECTION_THRESHOLD = system_config["THRESHOLDS"]["DETECTION_THRESHOLD"]
@@ -121,8 +105,8 @@ def load_config():
         with open(config_path, "r", encoding='utf-8') as file:
             return json.load(file)
     except Exception as e:
-        logging.error(f"Error reading Config_Discord.json file: {e}")
-        print(f"Error reading Config_Discord.json file: {e}")
+        logging.error(f"Error reading file Config_Discord.json: {e}")
+        print(f"Error reading file Config_Discord.json: {e}")
         return None
 
 def validate_config(config):
@@ -137,8 +121,8 @@ def validate_config(config):
 config = load_config()
 
 if config is None:
-    logging.error("Failed to load Discord configuration. Please check your Config_Discord.json file.")
-    print("Failed to load Discord configuration. Please check your Config_Discord.json file.")
+    logging.error("Failed to load Discord configuration. Please check your Config_Discord.json file")
+    print("Failed to load Discord configuration. Please check your Config_Discord.json file")
     exit(1)
 
 if config and validate_config(config):
@@ -188,7 +172,7 @@ def load_or_ask_region():
 region = load_or_ask_region()
 
 async def compare_counter(counter):
-    global last_played_file_nitral
+    global last_played_file_alarm
 
     thresholds = [int(t) for t in system_config["THRESHOLDS"]["DETECTION_THRESHOLD"].split(",")]
     sound_files = system_config["THRESHOLDS"]["SOUND_FILES"]
@@ -196,24 +180,24 @@ async def compare_counter(counter):
     try:
         if counter > thresholds[-1]:
             max_sound = sound_files["MAX_ENEMIES"]
-            if last_played_file_nitral != max_sound:
+            if last_played_file_alarm != max_sound:
                 await play_sound_file(max_sound, GUILD_ID, CHANNEL_ID)
-                last_played_file_nitral = max_sound
+                last_played_file_alarm = max_sound
                 logging.info(f"Sound played: {max_sound}")
         elif counter in thresholds:
             index = thresholds.index(counter)
             if index == 0:
                 zero_sound = sound_files["ONE_ENEMY_LEFT"]
-                if last_played_file_nitral != zero_sound:
+                if last_played_file_alarm != zero_sound:
                     await play_sound_file(zero_sound, GUILD_ID, CHANNEL_ID)
-                    last_played_file_nitral = zero_sound
+                    last_played_file_alarm = zero_sound
                     logging.info(f"Sound played: {zero_sound}")
             else:
                 sound_file = sound_files["ENEMY_COUNT"][index - 1]
-                if last_played_file_nitral != sound_file:
+                if last_played_file_alarm != sound_file:
                     await play_sound_file(sound_file, GUILD_ID, CHANNEL_ID)
-                    last_played_file_nitral = sound_file
-                    logging.info(f"Sound played: {sound_file}")
+                    last_played_file_alarm = sound_file
+                    logging.info(f"Воспроизведен звук: {sound_file}")
     
     except IndexError:
         logging.error("Error: Not enough sound files in the configuration for the given number of enemies")
@@ -246,12 +230,12 @@ async def object_detection(region):
 
         hsv_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
         
-        red_lower=np.array([0, 50, 50],np.uint8)
-        red_upper=np.array([5, 255, 255],np.uint8)
-        orange_lower=np.array([5, 40, 90],np.uint8)
-        orange_upper=np.array([15, 255, 255],np.uint8)
-        yellow_lower = np.array([15, 100, 100],np.uint8)
-        yellow_upper = np.array([35, 255, 255],np.uint8)
+        red_lower = np.array(system_config["COLOR_DETECTION"]["RED"]["LOWER"], np.uint8)
+        red_upper = np.array(system_config["COLOR_DETECTION"]["RED"]["UPPER"], np.uint8)
+        orange_lower = np.array(system_config["COLOR_DETECTION"]["ORANGE"]["LOWER"], np.uint8)
+        orange_upper = np.array(system_config["COLOR_DETECTION"]["ORANGE"]["UPPER"], np.uint8)
+        yellow_lower = np.array(system_config["COLOR_DETECTION"]["YELLOW"]["LOWER"], np.uint8)
+        yellow_upper = np.array(system_config["COLOR_DETECTION"]["YELLOW"]["UPPER"], np.uint8)
 
         red_mask = cv2.inRange(hsv_frame, red_lower, red_upper)
         orange_mask = cv2.inRange(hsv_frame, orange_lower, orange_upper)
@@ -283,14 +267,14 @@ async def object_detection(region):
             await handle_error_client()
             break
 
-        await asyncio.sleep(0.1)
+        await asyncio.sleep(system_config["SCREEN"]["SCAN_INTERVAL"])
 
 async def handle_error_client():
     global error_sound_played
     
-    while True:
-        await play_sound_file("Sound/client_eve_error.wav", GUILD_ID, CHANNEL_ID)
-        await asyncio.sleep(1800)
+    if not error_sound_played:
+        await play_sound_file(system_config["PATHS"]["ERROR_SOUND"], GUILD_ID, CHANNEL_ID)
+        await asyncio.sleep(system_config["SCREEN"]["ERROR_CHECK_INTERVAL"])
         await object_detection(region)
 
 async def play_sound_file(file_path, guild_id, channel_id):
@@ -346,9 +330,9 @@ async def object_detection_forever():
 async def play_start_bot_sound():
     global bot_started
     if not bot_started:
-        await play_sound_file("Sound/start_bot.wav", GUILD_ID, CHANNEL_ID)
+        await play_sound_file(system_config["PATHS"]["START_SOUND"], GUILD_ID, CHANNEL_ID)
         bot_started = True
-
+        
 @bot.event
 async def on_ready():
     logging.info(f'Logged in as {bot.user}')
@@ -356,6 +340,5 @@ async def on_ready():
     await play_start_bot_sound()
     bot.loop.create_task(object_detection_forever())
 
-if __name__ == "__main__":
+if __name__ == "__main__":    
     bot.run(TOKEN)
-
