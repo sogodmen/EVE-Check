@@ -1,12 +1,12 @@
 
 # EVE-Check - EVE Online Local Chat Monitoring System
 
-A project for automatically monitoring local chat in EVE Online with Discord and Telegram notifications about the appearance of hostile and neutral targets.
+A project for automatically monitoring local chat in EVE Online with Discord notifications about the appearance of hostile and neutral targets.
 
 🎯 Main Features
 - Automatic detection of targets in EVE Online local chat
 - Color-coded target classification: red (enemies), orange (enemies), yellow (neutrals)
-- Dual notification system: Discord + Telegram
+- Notification system: Discord
 - Sound alerts with gradation based on the number of targets
 - Game client status monitoring (detection of disconnections)
 
@@ -71,7 +71,6 @@ ffmpeg -version
 
 Edit the files:
 
-- `Config_Telegram.json` — Telegram chat token and ID
 - `Config_Discord.json` — Discord token/webhook
 - `Config_Region.json`, `Config_System.json` — system parameters
 
@@ -142,20 +141,14 @@ After setup, make sure the bot:
 ## 🚀 Launch
 
 ### Option 1: Via `.bat`
-- Discord only: Double-click Start.bat
-- Discord + Telegram: Double-click Start_Full.bat
+- Double-click Start.bat
 
 ### Option 2: Via Terminal
 
-# To launch only the Discord bot, run the command:
+# To launch the Discord bot, run the command:
 
 ```bash
 python EVE_Check.py
-```
-# To launch the bot with Telegram and Discord support, run the command:
-
-```bash
-python EVE_Check_2.0.py
 ```
 
 ---
@@ -163,7 +156,7 @@ python EVE_Check_2.0.py
 ## 📌 Notes
 
 - Uses `.wav` files from `Sound/` to play audio for events
-- The bot sends notifications to Telegram/Discord when events are detected
+- The bot sends notifications to Discord when events are detected
 - Language Note: If you need sound files in Russian, replace the files in the Sound/ folder with the ones from the Sound [RU] folder.
 
 ---
