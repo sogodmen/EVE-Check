@@ -1,10 +1,10 @@
 
-# EVE-Check - EVE Online Local Chat Monitoring System
+# EVE-Check - EVE Local Chat Monitoring System
 
-A project for automatically monitoring local chat in EVE Online with Discord notifications about the appearance of hostile and neutral targets.
+A project for automatically monitoring local chat in EVE with Discord notifications about the appearance of hostile and neutral targets.
 
 🎯 Main Features
-- Automatic detection of targets in EVE Online local chat
+- Automatic detection of targets in EVE local chat
 - Color-coded target classification: red (enemies), orange (enemies), yellow (neutrals)
 - Notification system: Discord
 - Sound alerts with gradation based on the number of targets
@@ -202,21 +202,8 @@ Then move your mouse to the lower right corner of the area and press F12 again.
 - 🔄 **If you need to reconfigure the local chat area** - select "`n`" to reconfigure
 
 📌 **Recommendation:** 
-- The scan area should cover the EVE Online local chat window where the Enemy ships. Ensure the area includes all possible target spawn locations.
+- The scan area should cover the EVE local chat window where the Enemy ships. Ensure the area includes all possible target spawn locations.
 - **UI Important Setting**: For more accurate target monitoring in the local chat, change the color of neutral targets from gray to yellow in the settings.
-
----
-
-## ⚠️ Important Note Regarding Security and Compliance
-
-EVE Check is an **external application** (overlay) that runs alongside the EVE Online client, but **does not modify or interact with it directly**.
-
-### Key Points:
-* **No Client Interference**: The application does not inject code, read or modify game memory (RAM), or intercept network traffic.
-* **OCR-Based**: Data analysis is performed solely by reading text from your computer screen (Optical Character Recognition - OCR technology). This is the same as if you were reading the information yourself.
-* **EULA and TOS Compliance**: This method of operation does not violate the [End User License Agreement (EULA)](https://www.eveonline.com/en/agreement/eula) and [Terms of Service (TOS)](https://www.eveonline.com/en/agreement/tos) of EVE Online.
-
-**Conclusion:** Using EVE Check **will not result in an account ban** by EVE Online security systems (e.g., Easy Anti-Cheat - EAC), as these systems are designed to detect programs that directly interact with the game. EVE Check is not such a program.  
 
 ---
 
