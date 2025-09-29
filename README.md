@@ -187,7 +187,7 @@ Then move your mouse to the lower right corner of the area and press F12 again.
 
 2. **Setup steps:**
 
-- **Step 1:** Move your mouse cursor to the **upper left corner** of the local chat area in the EVE Online client
+- **Step 1:** Move your mouse cursor to the **upper left corner** of the local chat area in the EVE client
 - **Press F12** to set the first point
 - **Step 2:** Move your mouse cursor to the **lower right corner** of the local chat area
 - **Press F12 again** to complete the setup
